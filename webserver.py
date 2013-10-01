@@ -14,5 +14,5 @@ try:
 	print('Started httpserver on port',PORT_NUMBER)
 	server.serve_forever()
 except KeyboardInterrupt:
-	print '^C recieved, shutting down the web server'
+	print('^C recieved, shutting down the web server')
 	server.socket.close()
