@@ -11,7 +11,7 @@ class mainHandler(BaseHTTPRequestHandler):
 
 try:
 	server=HTTPServer(("",PORT_NUMBER),mainHandler)
-	print 'Started httpserver on port',PORT_NUMBER
+	print('Started httpserver on port',PORT_NUMBER)
 	server.serve_forever()
 except KeyboardInterrupt:
 	print '^C recieved, shutting down the web server'
