@@ -1,4 +1,4 @@
-from BaseHTTPServer import BaseHTTPRequestHandler, HTTPServer
+from HTTPServer import BaseHTTPRequestHandler, HTTPServer
 PORT_NUMBER = 8080
 
 class mainHandler(BaseHTTPRequestHandler):
