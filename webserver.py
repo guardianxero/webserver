@@ -1,13 +1,21 @@
-from http.server import BaseHTTPRequestHandler, HTTPServer
+from BaseHTTPServer import BaseHTTPRequestHandler, HTTPServer
+
 PORT_NUMBER = 8080
 
 class mainHandler(BaseHTTPRequestHandler):
-	def do_GET(self):
+	def do_HEAD(self):
 		self.send_response(200)
 		self.send_header('Content-type','text/html')
 		self.end_headers()
-		self.wfile.write("Hello World!")
-		return
+	def do_GET(self):
+		f = open('main.html')
+		if self.path=='/test.html':
+			f = open('test.html')
+		print self.path
+		self.send_response(200)
+		self.send_header('Content-type','text/html')
+		self.end_headers()
+		self.wfile.write(f.read())
 
 try:
 	server=HTTPServer(("",PORT_NUMBER),mainHandler)
