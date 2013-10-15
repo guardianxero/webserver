@@ -8,10 +8,11 @@ class mainHandler(BaseHTTPRequestHandler):
 		self.send_header('Content-type','text/html')
 		self.end_headers()
 	def do_GET(self):
-		f = open('main.html')
+		f = open('blog-home.html')
 		if self.path=='/test.html':
 			f = open('test.html')
-		print self.path
+		if self.path=='/blog-home.html':
+			f = open('blog-home.html')
 		self.send_response(200)
 		self.send_header('Content-type','text/html')
 		self.end_headers()
